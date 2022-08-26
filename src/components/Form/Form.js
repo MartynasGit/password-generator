@@ -15,6 +15,7 @@ const Form = ({ setPassword, setPasswords, passWords, passWord }) => {
   const [symbols, setSymbols] = useState(false);
   const [lenghty, setLenghty] = useState(6);
   const passwordInput = useRef(null);
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     const lsItems = localStorage.getItem("items");
@@ -59,7 +60,6 @@ const Form = ({ setPassword, setPasswords, passWords, passWord }) => {
     switch (e.target.id) {
       case "UpperCase":
         setUpperCase(!upperCase);
-        console.log();
         break;
       case "LowerCase":
         setLowerCase(!lowerCase);
@@ -75,7 +75,14 @@ const Form = ({ setPassword, setPasswords, passWords, passWord }) => {
     }
   };
   const handleGenerate = () => {
-    generate();
+    if (upperCase || lowerCase || symbols || numbers){
+      generate();
+      setError(false)
+    }
+    else{
+      setError(true)
+    }
+
   };
   const reset = () => {
     setUpperCase(true);
@@ -99,6 +106,11 @@ const Form = ({ setPassword, setPasswords, passWords, passWord }) => {
             onChange={handleChange}
             placeholder="Enter password lenght"
           />
+          {!error ? (
+            ""
+          ) : (
+            <div className="text-danger">At least one must be active !</div>
+          )}
         </div>
       </div>
       <div>

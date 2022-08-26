@@ -9,7 +9,7 @@ function App() {
   const [password, setPassword] = useState("");
   const [passWords, setPasswords] = useState([]);
   return (
-    <div className="container bg-color minHeight100">
+    <div className="container minHeight100 ">
       <Title />
       <div className="d-flex justify-content-center pt-5 minHeight">
         <Form
