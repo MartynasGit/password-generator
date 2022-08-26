@@ -1,16 +1,31 @@
 # Password Generator
 
-Sukurkite slaptažodžių generatorių.
-Stringo generavimui panaudokite reikšmes gaunamas iš šių laukelių:
-Slaptažodžio ilgis (input[type="number"]). Maksimalus ilgis 50 simbolių.
-Sudėtingumas (input[type="checkbox"]). Galimi variantai:
-Didžiosios raidės (Laukelis turi būti parinktas atidarius aplikaciją),
-Mažosios raidės (Laukelis turi būti parinktas atidarius aplikaciją),
-Skaičiai,
-Simboliai
+Website made with react and boostrap.
 
-Šalia generavimo formos atvaizduokite mygtuką "Išvalyti" ant kurio paspaudus forma būtų grąžinamą į pradinę padėtį.
-Žemiau formos atvaizduokite dešimt paskutinių generuotų slaptažodžių sąrašą.
-Duomenis saugokite bei paimkite iš localStorage talpyklos.
-Pasinaudokite norimais CSS, HTML karkasais (Bootstrap, Tailwind, Material UI etc.)
-Baigus darbą patalpinkite kodą į Github platformą bei prisekite nuorodą prie šios užduoties.
+Website is used to generate password up to 50 numbers in lenght.
+
+Your password can be made from upercase letters , lowercase letters, symbols and numbers.
+
+Passwords is stored in local storage, so  wont be deleted after you open the page later.
+
+Purpose of the website is to learn react !
+
+
+# How to use
+
+Page is live with Github pages link. -- https://martynasgit.github.io/to-do-app/
+
+OR
+
+Use node Node.js®
+
+Open a terminal in a clean folder to use.
+
+git clone https://github.com/MartynasGit/.git
+
+cd to-do-app - to change directory in terminal window.
+
+npm install - wait for everything to be ready.
+
+npm start - to start project in a browser.
+

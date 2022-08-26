@@ -1,31 +1,34 @@
 import Button from "../Button/Button";
 import Dificulty from "../Dificulty/Dificulty";
-import { useEffect, useState } from "react";// eslint-disable-next-line
-import { UpperCase, LowerCase, Symbols, Numbers } from "../data/Options";
+import { useEffect, useRef, useState } from "react"; // eslint-disable-next-line
+import {
+  UpperCase,
+  LowerCase,
+  Symbols,
+  Numbers,
+} from "../data/Options";
 
-const Form = () => {
+const Form = ({ setPassword, setPasswords, passWords, passWord }) => {
   const [upperCase, setUpperCase] = useState(true);
   const [lowerCase, setLowerCase] = useState(true);
   const [numbers, setNumbers] = useState(false);
   const [symbols, setSymbols] = useState(false);
-  const [lenghty, setLenghty] = useState(5);
-  const [password, setPassword] = useState("");
-  const [passWords, setPasswords] = useState([])
+  const [lenghty, setLenghty] = useState(6);
+  const passwordInput = useRef(null);
 
-    useEffect(() => {
-      const lsItems = localStorage.getItem("items");
-      if (!lsItems) {
-        localStorage.setItem("items", JSON.stringify(lsItems));
-      } else {
-        setPasswords(JSON.parse(lsItems));
-        setPassword(passWords[0])
-      } // eslint-disable-next-line
-    }, []);
+  useEffect(() => {
+    const lsItems = localStorage.getItem("items");
+    if (!lsItems) {
+      localStorage.setItem("items", JSON.stringify(lsItems));
+    } else {
+      setPasswords(JSON.parse(lsItems));
+      setPassword(passWords[0]);
+    } // eslint-disable-next-line
+  }, []);
 
-      useEffect(() => {
-        localStorage.setItem("items", JSON.stringify(passWords));
-      }, [passWords]);
-
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(passWords));
+  }, [passWords]);
 
   const generate = () => {
     let temp = "";
@@ -34,18 +37,15 @@ const Form = () => {
     if (lowerCase) temp += LowerCase;
     if (numbers) temp += Numbers;
     if (symbols) temp += Symbols;
-    let sum=""
+    let sum = "";
     for (let i = 0; i < lenghty; i++) {
-      sum += temp[Math.floor(Math.random() * temp.length)]
+      sum += temp[Math.floor(Math.random() * temp.length)];
     }
-    setPassword(sum)
-    let pass = [...passWords, {pass: sum}]
-    
-    if(pass.length > 10)
-      pass.splice(0,1)
-    setPasswords(pass);
+    setPassword(sum);
+    let pass = [...passWords, { pass: sum }];
 
-    
+    if (pass.length > 10) pass.splice(0, 1);
+    setPasswords(pass);
   };
 
   const handleChange = (e) => {
@@ -56,7 +56,6 @@ const Form = () => {
     setLenghty(e.target.value);
   };
   const checkChange = (e) => {
-    
     switch (e.target.id) {
       case "UpperCase":
         setUpperCase(!upperCase);
@@ -80,18 +79,26 @@ const Form = () => {
   };
   const reset = () => {
     setUpperCase(true);
-    setLowerCase(true)
+    setLowerCase(true);
     setNumbers(false);
     setSymbols(false);
-    setLenghty(5);
+    setLenghty(6);
+    passwordInput.current.value = "";
+    setPassword("");
+    setPasswords([]);
   };
 
   return (
-    <form className="p-2" onSubmit={(e) => e.preventDefault()}>
+    <form className="margin-c" onSubmit={(e) => e.preventDefault()}>
       <div>
         <span>Password lenght:</span>
         <div>
-          <input type="number" onChange={handleChange} />
+          <input
+            ref={passwordInput}
+            type="number"
+            onChange={handleChange}
+            placeholder="Enter password lenght"
+          />
         </div>
       </div>
       <div>
@@ -126,10 +133,6 @@ const Form = () => {
         <Button text={"Generate"} func={handleGenerate} />
         <Button text={"Clear"} func={reset} />
       </div>
-      <h1>{password}</h1>
-      {passWords
-        ? passWords.map((item, i) => <div key={item + i}>{item.pass}</div>)
-        : "Generate your password!"}
     </form>
   );
 };

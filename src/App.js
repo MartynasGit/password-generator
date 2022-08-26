@@ -1,12 +1,26 @@
+import { useState } from "react";
 import "./App.css";
+import Footer from "./components/Footer/Footer";
 import Form from "./components/Form/Form";
+import Results from "./components/Results/Results";
 import Title from "./components/Title/Title";
 
 function App() {
+  const [password, setPassword] = useState("");
+  const [passWords, setPasswords] = useState([]);
   return (
-    <div className="container bg-color vh-100">
+    <div className="container bg-color minHeight100">
       <Title />
-      <Form />
+      <div className="d-flex justify-content-center pt-5 minHeight">
+        <Form
+          setPassword={setPassword}
+          setPasswords={setPasswords}
+          passWord={password}
+          passWords={passWords}
+        />
+        <Results password={password} passwords={passWords} />
+      </div>
+      <Footer/>
     </div>
   );
 }
