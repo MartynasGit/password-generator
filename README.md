@@ -23,7 +23,7 @@ Open a terminal in a clean folder to use.
 
 git clone https://github.com/MartynasGit/password-generator.git
 
-cd to-do-app - to change directory in terminal window.
+cd password-generator - to change directory in terminal window.
 
 npm install - wait for everything to be ready.
 
