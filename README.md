@@ -13,7 +13,7 @@ Purpose of the website is to learn react !
 
 # How to use
 
-Page is live with Github pages link. -- https://martynasgit.github.io/to-do-app/
+Page is live with Github pages link. -- https://martynasgit.github.io/password-generator/
 
 OR
 
@@ -21,7 +21,7 @@ Use node Node.js®
 
 Open a terminal in a clean folder to use.
 
-git clone https://github.com/MartynasGit/.git
+git clone https://github.com/MartynasGit/password-generator.git
 
 cd to-do-app - to change directory in terminal window.
 
