@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="container minHeight100 ">
       <Title />
-      <div className="d-flex justify-content-center pt-5 minHeight">
+      <div className="d-flex justify-content-center pt-3 minHeight">
         <Form
           setPassword={setPassword}
           setPasswords={setPasswords}

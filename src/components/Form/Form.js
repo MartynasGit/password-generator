@@ -33,7 +33,8 @@ const Form = ({ setPassword, setPasswords, passWords, passWord }) => {
 
   const generate = () => {
     let temp = "";
-    console.log(upperCase);
+    console.log(lenghty)
+    if(lenghty > 0){
     if (upperCase) temp += UpperCase;
     if (lowerCase) temp += LowerCase;
     if (numbers) temp += Numbers;
@@ -46,7 +47,7 @@ const Form = ({ setPassword, setPasswords, passWords, passWord }) => {
     let pass = [...passWords, { pass: sum }];
 
     if (pass.length > 10) pass.splice(0, 1);
-    setPasswords(pass);
+    setPasswords(pass);}
   };
 
   const handleChange = (e) => {

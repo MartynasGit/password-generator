@@ -9,7 +9,7 @@ body {
    background: linear-gradient(to left, rgba(0, 0, 255, 0.252) 50%, rgba(88, 19, 19, 0.318) 50%) right;
 }
 .card-with{ 
-  width: 18rem;
+  width: 22rem;
 }
 .margin-c{
   margin-right: 15rem;
@@ -21,12 +21,11 @@ body {
   right: 0;
 }
 .minHeight {
-  min-height: 60vh;
+  min-height: 65vh;
 }
 .minHeight100 {
   min-height: 100vh;
 }
-
 .passCard{
   height: 390px;
 }

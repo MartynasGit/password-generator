@@ -2,7 +2,7 @@
 
 Website made with react and boostrap.
 
-Website is used to generate password up to 50 numbers in lenght.
+Website is used to generate password up to 50 numbers in length.
 
 Your password can be made from upercase letters , lowercase letters, symbols and numbers.
 
