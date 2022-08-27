@@ -99,13 +99,13 @@ const Form = ({ setPassword, setPasswords, passWords, passWord }) => {
   return (
     <form className="margin-c" onSubmit={(e) => e.preventDefault()}>
       <div>
-        <span>Password lenght:</span>
+        <span>Password length:</span>
         <div>
           <input
             ref={passwordInput}
             type="number"
             onChange={handleChange}
-            placeholder="Enter password lenght"
+            placeholder="Enter password length"
           />
           {!error ? (
             ""

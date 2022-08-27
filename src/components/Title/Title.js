@@ -8,7 +8,7 @@ const Title = () => (
     </div>
     <div>
       <p className="text-center pt-2">
-        Use our online password generator to instantly create a secure, random
+        Use this online password generator to instantly create a secure, random
         password.
       </p>
     </div>
